@@ -1,0 +1,23 @@
+<h1>Rentals</h1>
+    <p>
+      <%= link_to 'Home', root_path() %> <br>
+      <%= link_to 'Add a new rental', new_place_path() %>
+    </p>
+<table>
+  <tr>
+    <th>Rental Type</th>
+    <th>Rental Description</th>
+  </tr>
+
+  <% @places.each do |place| %>
+    <tr>
+      <td><%= place.title %></td>
+      <td><%= place.description %></td>
+      <td><%= link_to 'Show', place_path(place) %></td>
+      <td><%= link_to 'Edit', edit_place_path(place) %></td>
+      <td><%= link_to 'Delete', place_path(place),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,14 @@
+<% @place.reviews.each do |rev| %>
+  <p>
+    <strong>Reviewer:</strong>
+    <%= rev.reviewer %>
+  </p>
+  <p>
+    <strong>Review:</strong>
+    <%= rev.body %>
+  </p>
+  <p>
+    <strong>Rating:</strong>
+    <%= rev.rating %>
+  </p>
+<% end %>

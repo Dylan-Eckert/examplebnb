@@ -1,0 +1,41 @@
+<%= form_for @place do |f| %>
+  <% if @place.errors.any? %>
+    <div>
+      <h2>
+        Please fix the following errors:
+      </h2>
+      <ul>
+        <% @place.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :conditional %><br>
+    <%= f.text_field :conditional %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <p>
+    <%= link_to 'Cancel and View Rentals', places_path() %>
+  </p>
+<% end %>

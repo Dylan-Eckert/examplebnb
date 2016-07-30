@@ -1,0 +1,29 @@
+<p>
+  <%= link_to 'View all Rentals', places_path() %>
+</p>
+<p>
+  <strong>Rental Type</strong>
+  <%= @place.title %>
+</p>
+<p>
+  <strong>Rental Description</strong>
+  <%= @place.description %>
+</p>
+<p>
+  <strong>Rental Address</strong>
+  <%= @place.address %>
+</p>
+<p>
+  <strong>Rental Conditionals</strong>
+  <%= @place.conditional %>
+</p>
+<p>
+  <strong>Rental Price Per Night</strong>
+  <%= @place.price %>
+</p>
+
+<h2>Reviews</h2>
+<%= render @place.reviews %>
+
+<h2>Add a review:</h2>
+<%= render 'reviews/form' %>
