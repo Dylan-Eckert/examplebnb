@@ -1,5 +1,6 @@
 <%= form_for([@place, @place.reviews.build]) do |f| %>
   <div class="rev-form-wrap">
+    <h2 class="add-rev">Add a review:</h2>
     <p class="rev-form-base">
       <%= f.label :reviewer, class: "rev-form-label" %><br>
       <%= f.text_field :reviewer, class: "rev-form-input" %>
