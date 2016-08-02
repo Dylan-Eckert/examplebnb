@@ -1,17 +1,19 @@
 <%= form_for([@place, @place.reviews.build]) do |f| %>
-  <p>
-    <%= f.label :reviewer %><br>
-    <%= f.text_field :reviewer %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.label :rating %><br>
-    <%= f.text_area :rating %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="rev-form-wrap">
+    <p class="rev-form-base">
+      <%= f.label :reviewer, class: "rev-form-label" %><br>
+      <%= f.text_field :reviewer, class: "rev-form-input" %>
+    </p>
+    <p class="rev-form-base">
+      <%= f.label :body, class: "rev-form-label" %><br>
+      <%= f.text_area :body, class: "rev-form-input" %>
+    </p>
+    <p class="rev-form-base">
+      <%= f.label :rating, class: "rev-form-label" %><br>
+      <%= f.text_area :rating, class: "rev-form-input" %>
+    </p>
+    <p class="rev-form-base">
+      <%= f.submit %>
+    </p>
+  </div>
 <% end %>

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   resources :places, shallow: true do
+    collection do
+      get :search_results
+    end
     resources :reviews
   end
 

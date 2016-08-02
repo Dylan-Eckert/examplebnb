@@ -35,6 +35,10 @@ class PlacesController < ApplicationController
       end
     end
 
+    def search_results
+        @places = Place.where("title like ?", "%#{params[:query]}%")
+    end
+
     def destroy
       @place = Place.find(params[:id])
       @place.destroy

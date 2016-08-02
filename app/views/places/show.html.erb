@@ -1,29 +1,35 @@
-<p>
-  <%= link_to 'View all Rentals', places_path() %>
-</p>
-<p>
-  <strong>Rental Type</strong>
-  <%= @place.title %>
-</p>
-<p>
-  <strong>Rental Description</strong>
-  <%= @place.description %>
-</p>
-<p>
-  <strong>Rental Address</strong>
-  <%= @place.address %>
-</p>
-<p>
-  <strong>Rental Conditionals</strong>
-  <%= @place.conditional %>
-</p>
-<p>
-  <strong>Rental Price Per Night</strong>
-  <%= @place.price %>
-</p>
+<div class="wrap">
+<%= render 'nav' %>
+  <div class="place-show">
+    <p>
+      <strong class="text">Rental Type</strong><br>
+      <%= @place.title %>
+    </p>
+    <p>
+      <strong class="text">Rental Description</strong><br>
+      <%= @place.description %>
+    </p>
+    <p>
+      <strong class="text">Rental Address</strong><br>
+      <%= @place.address %>
+    </p>
+    <p>
+      <strong class="text">Rental Conditionals</strong><br>
+      <%= @place.conditional %>
+    </p>
+    <p>
+      <strong class="text">Rental Price Per Night</strong><br>
+      <%= @place.price %>
+    </p>
+  </div>
 
-<h2>Reviews</h2>
-<%= render @place.reviews %>
+  <div class="rev-form">
+    <h2 class="add-rev">Add a review:</h2>
+    <%= render 'reviews/form' %>
+  </div>
 
-<h2>Add a review:</h2>
-<%= render 'reviews/form' %>
+    <div class="revs-box">
+      <h2 class="revs">Reviews</h2>
+      <%= render @place.reviews %>
+    </div>
+</div>
